@@ -1,7 +1,11 @@
+from dotenv import load_dotenv
+import os
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://samratd2005_db_user:samrat_dbatlas@recipe-ai.5gqvssd.mongodb.net/")
+load_dotenv()
 
-db = client["recipe-ai"]
+MONGO_URI = os.getenv("MONGO_URI")
 
+client = MongoClient(MONGO_URI)
+db = client["recipe_ai"]
 users_collection = db["users"]
