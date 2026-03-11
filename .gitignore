@@ -1,0 +1,12 @@
+venv/
+env/
+data/
+cache/
+__pycache__/
+*.pyc
+*.pkl
+*.parquet
+*.csv
+.env
+.vscode/
+.idea/

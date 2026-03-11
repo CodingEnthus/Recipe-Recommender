@@ -1,0 +1,131 @@
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding-top:80px;
+background:radial-gradient(circle,#0a0f1c,#02040a);
+color:white;
+font-family:Segoe UI;
+overflow-y:auto;
+}
+
+/* AI grid background */
+
+body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(0,255,255,0.05) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,255,255,0.05) 1px,transparent 1px);
+background-size:40px 40px;
+pointer-events: none;
+}
+
+/* dashboard card */
+
+.dashboard-card{
+width:700px;
+padding:45px;
+border-radius:20px;
+background:#121826;
+border:1px solid rgba(0,255,255,0.2);
+box-shadow:0 0 40px rgba(0,255,255,0.2);
+text-align:center;
+z-index:2;
+}
+
+/* header */
+
+.dashboard-header h1{
+font-size:32px;
+letter-spacing:3px;
+color:#00ffff;
+margin-bottom:10px;
+text-shadow:0 0 15px rgba(0,255,255,0.8);
+}
+
+.dashboard-header p{
+margin-bottom:30px;
+color:#cfcfcf;
+}
+
+/* search */
+
+.search-box{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+.search-box input{
+width:350px;
+padding:12px;
+border-radius:6px;
+border:1px solid rgba(0,255,255,0.3);
+background:#0a0f1c;
+color:white;
+outline:none;
+}
+
+.search-box input:focus{
+box-shadow:0 0 10px rgba(0,255,255,0.7);
+}
+
+.search-box button{
+padding:12px 18px;
+border:none;
+border-radius:6px;
+background:#00ffff;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* filters */
+
+.filters{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:10px;
+}
+
+.filters select,
+.filters input[type="number"]{
+padding:10px;
+border-radius:6px;
+border:1px solid rgba(0,255,255,0.3);
+background:#0a0f1c;
+color:white;
+}
+
+.protein{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+/* results */
+
+.recipes{
+margin-top:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.recipe-card{
+background:#0a0f1c;
+padding:20px;
+border-radius:10px;
+border:1px solid rgba(0,255,255,0.2);
+transition:.3s;
+}
+
+.recipe-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px rgba(0,255,255,0.6);
+}

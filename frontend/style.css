@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 5px rgba(0,255,255,0.5); }
+    50% { text-shadow: 0 0 20px rgba(0,255,255,1); }
+    100% { text-shadow: 0 0 5px rgba(0,255,255,0.5); }
+}
+
+.fridge-label h1 {
+    animation: glowPulse 3s infinite;
+}
+body {
+    height: 100vh;
+    background: radial-gradient(circle at center, #0a0f1c 0%, #02040a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Subtle AI Grid Background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+}
+
+/* Fridge Container */
+.fridge {
+    width: 360px;
+    height: 560px;
+    position: relative;
+    z-index: 2;
+    perspective: 1200px;
+}
+
+/* Door */
+.door {
+    width: 100%;
+    height: 100%;
+    background: #121826;
+    border-radius: 20px;
+    position: absolute;
+    transform-origin: left;
+    transition: 1s ease;
+    box-shadow: 0 0 40px rgba(0,255,255,0.2);
+    border: 1px solid rgba(0,255,255,0.2);
+}
+
+/* AI Glow Light */
+.light {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center,
+        rgba(0,255,255,0.4) 0%,
+        rgba(0,200,255,0.2) 40%,
+        rgba(0,0,0,0) 75%);
+    opacity: 0;
+    transition: 1s ease;
+    border-radius: 20px;
+}
+
+/* Login Panel */
+.login-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    text-align: center;
+    opacity: 0;
+    transition: 1s ease;
+    color: #ffffff;
+}
+
+/* Futuristic Heading */
+.login-panel h2 {
+    margin-bottom: 20px;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0,255,255,0.7);
+}
+
+/* Inputs */
+.login-panel input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid rgba(0,255,255,0.4);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-panel input:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0,255,255,0.7);
+}
+
+/* Button */
+.login-panel button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background: #00ffff;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-panel button:hover {
+    box-shadow: 0 0 20px rgba(0,255,255,0.9);
+}
+
+/* Open Animation */
+.fridge.open .door{
+transform:rotateY(-120deg);
+transition:1s ease;
+}
+
+.fridge.open .light{
+opacity:1;
+}
+.fridge.open .login-panel {
+    opacity: 1;
+}
+.fridge-label {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.fridge-label h1 {
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #00ffff;
+    margin-bottom: 5px;
+    text-shadow: 0 0 12px rgba(0,255,255,0.9);
+}
+
+.fridge-label p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+}
+.logo-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    transition: 0.6s ease;
+    pointer-events: none;
+}
+
+.logo-container img {
+    width: 140px;
+    filter: drop-shadow(0 0 15px rgba(0,255,255,0.7));
+}
+.fridge.open .logo-container {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+@keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 10px rgba(0,255,255,0.5)); }
+    50% { filter: drop-shadow(0 0 25px rgba(0,255,255,1)); }
+    100% { filter: drop-shadow(0 0 10px rgba(0,255,255,0.5)); }
+}
+
+.logo-container img {
+    animation: logoGlow 3s infinite;
+}

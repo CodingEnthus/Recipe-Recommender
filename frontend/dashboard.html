@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Recipe AI - Kitchen</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="scene">
+<div class="dashboard-card">
+
+    <div class="dashboard-header">
+        <h1>SMART RECIPE AI</h1>
+        <p>Inside the AI Kitchen</p>
+    </div>
+
+    <div class="search-box">
+
+        <input 
+        type="text"
+        id="ingredients"
+        placeholder="What's in your fridge? (example: rice, chicken, butter)"
+        >
+
+        <button id="searchBtn">
+            Generate Recipe 🔎
+        </button>
+
+    </div>
+
+    <div class="filters">
+
+        <select id="matchMode">
+            <option value="any">Match Any Ingredient</option>
+            <option value="all">Match All Ingredients</option>
+        </select>
+
+        <input 
+        type="number"
+        id="maxCalories"
+        placeholder="Max Calories"
+        >
+
+        <label class="protein">
+            <input type="checkbox" id="highProtein">
+            High Protein
+        </label>
+
+    </div>
+
+    <div id="results" class="recipes"></div>
+
+</div>
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
